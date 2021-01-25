@@ -5,7 +5,7 @@
     <c:param name="content">
         <c:choose>
             <c:when test="${report != null}">
-                <h2>日報　詳細ページ</h2>
+                <h2>日報詳細ページ</h2>
 
                 <table>
                     <tbody>
@@ -35,11 +35,20 @@
                                 <fmt:formatDate value="${report.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>
                         </tr>
+                        <tr>
+                            <th>いいね数</th>
+                            <td>
+
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
                 <c:if test="${sessionScope.login_employee.id == report.employee.id}">
                     <p><a href="<c:url value="/reports/edit?id=${report.id}" />">この日報を編集する</a></p>
+                </c:if>
+                <c:if test="${sessionScope.login_employee.id != report.employee.id}">
+                     <p><a href="<c:url value="/reports/edit?id=${report.id}" />">この日報にいいねする</a></p>
                 </c:if>
             </c:when>
             <c:otherwise>

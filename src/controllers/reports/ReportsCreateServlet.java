@@ -24,6 +24,15 @@ import utils.DBUtil;
 @WebServlet("/reports/create")
 public class ReportsCreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    int good_count = 0;
+    public void setGoodCount(int goodCount) {
+        this.good_count = goodCount;
+    }
+
+    public int getGoodCount() {
+        return good_count;
+    }
+
 
     /**
      * @see HttpServlet#HttpServlet()

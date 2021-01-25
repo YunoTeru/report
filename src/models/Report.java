@@ -32,7 +32,10 @@ import javax.persistence.Table;
     @NamedQuery(
         name = "getMyReportsCount",
         query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
-    )
+    ),
+
+
+
 })
 @Entity
 public class Report {
@@ -61,17 +64,16 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
-    @Column(name = "good", nullable = false)
-    private Integer good;
+    @Column(name = "good_count", nullable = false)
+            private Integer good_count;
 
 
-
-    public Integer getGood() {
-        return good;
+    public Integer getGood_count() {
+        return good_count;
     }
 
-    public void setGood(Integer good) {
-        this.good = good;
+    public void setGood_count(Integer good_count) {
+        this.good_count = good_count;
     }
 
     public Integer getId() {
